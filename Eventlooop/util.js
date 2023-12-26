@@ -17,16 +17,15 @@ const read = async (path) => {
     }
 }
 
-const write = async (path, text) => {
+const write = async (path) => {
     try {
-        const first = await writeFilePromisify(path, text)
+        const first = await writeFilePromisify(path, 'Hello donedada')
         console.log(first)
     }
     catch (err) {
         console.log(err)
     }
 }
-//getText("./modules/file.txt")
+getText("./modules/file.txt")
 
-write("./modules/file.txt", "Hello joe mama")
-
+read("../modules/file.txt")

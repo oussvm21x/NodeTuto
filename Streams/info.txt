@@ -1,0 +1,1 @@
+Streeams are used to read and write sequentially
