@@ -1,32 +1,10 @@
-const { readFile, writeFile } = require('fs')
-const util = require('util')
-// .promises make those function return promises 
+const http = require('http')
 
-//Promise 
-const readFilePromisify = util.promisify(readFile)
-const writeFilePromisify = util.promisify(writeFile)
+const server = http.createServer((req, res) => {
+    let url = req.url
+    console.log(url)
+    res.end("SERVER ON")
+})
 
 
-const read = async (path) => {
-    try {
-        const first = await readFilePromisify(path, 'utf8')
-        console.log(first)
-    }
-    catch (err) {
-        console.log(err)
-    }
-}
-
-const write = async (path, text) => {
-    try {
-        const first = await writeFilePromisify(path, text)
-        console.log(first)
-    }
-    catch (err) {
-        console.log(err)
-    }
-}
-//getText("./modules/file.txt")
-
-write("./modules/file.txt", "Hello joe mama")
-
+server.listen(5000)
