@@ -1,6 +1,6 @@
 const http = require('http')
 const express = require('express')
-const { products } = require('./data')
+const { products } = require('../data')
 const app = express()
 
 app.get('/', (req, res) => {

@@ -1,8 +1,8 @@
 const http = require('http')
 const express = require('express')
-const { products } = require('./data')
+const { products } = require('../data')
 const app = express()
-const { logger, authorized, apiMiddleWear } = require('./programms/middlewears')
+const { logger, authorized, apiMiddleWear } = require('./middlewears')
 
 
 app.use('/', [authorized, logger])
