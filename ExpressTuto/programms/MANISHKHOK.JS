@@ -1,8 +1,8 @@
 const express = require('express')
-const { people } = require('./data')
+const { people } = require('../data')
 
 const app = express()
-const { logger, authorized, apiMiddleWear } = require('./programms/middlewears')
+const { logger, authorized, apiMiddleWear } = require('./middlewears')
 
 app.use(express.static('./methods-public'))
 app.use(express.urlencoded({ extended: false })) //To make the data that we pass to the browser readabale by the server
